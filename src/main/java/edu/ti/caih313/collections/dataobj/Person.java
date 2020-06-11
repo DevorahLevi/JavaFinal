@@ -38,7 +38,15 @@ public class Person {
 
     // TODO -- implement toString with String.format 10 points
     @Override
-    public String toString() {
-        return null;
+    public String toString()
+    {
+        String emailToString;
+        if (emailAddress == null) {
+            emailToString = "No recorded email address.";
+        } else {
+            emailToString = emailAddress.getEmailAddress();
+        }
+        return String.format("Person { Name: %s; Gender: %s; Age: %d; Primary Email: %s }",
+                                getName(), getGender(), getAge(), emailToString);
     }
 }
